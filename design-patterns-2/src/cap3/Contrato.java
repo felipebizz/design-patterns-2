@@ -17,14 +17,6 @@ public class Contrato {
         this.tipo = tipoContrato;
     }
 
-    public Calendar getData() {
-        return data;
-    }
-
-    public String getCliente() {
-        return cliente;
-    }
-
     public TipoContrato getTipo() {
         return tipo;
     }
@@ -37,5 +29,9 @@ public class Contrato {
         } else if (tipo == TipoContrato.ACERTADO) {
             tipo = TipoContrato.CONCLUIDO;
         }
+    }
+
+    public Estado salvaEstado(){
+        return  new Estado(new Contrato(this.data, this.cliente, this.tipo));
     }
 }
